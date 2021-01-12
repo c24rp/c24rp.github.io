@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+}
+    
+    </style>
+</head>
+
+<body>
+
+<h1>FizzBuzz!</h1>
+<p>Working</p>
+
+<p id="answer"></p>
+ 
+    <script type="text/javascript">
+
+var printFizzBuzz = document.getElementById('answer');
+
+ 
+for (var i = 1; i <= 100; i++) {
+	printFizzBuzz.innerText = "";
+  
+    if (i % 15 == 0) printFizzBuzz.innerText = "FizzBuzz";
+    
+    else if (i % 3 == 0) printFizzBuzz.innerText = "Fizz";
+   
+	else if (i % 5 == 0) printFizzBuzz.innerText = "Buzz";
+   
+	else printFizzBuzz.innerText = i;
+}
+</script>
+</body>
+</html>

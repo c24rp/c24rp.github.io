@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style type="text/css">
+		.colorButton{
+    background-color: rgb(255,0,0);
+    width: 250px;
+    height: 250px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    margin: 10px;
+}
+
+#buttonWrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#colorValue{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#answer{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#reset{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#reset-button{
+    padding: 10px;
+    background: none;
+    border: 1px solid #000;
+    margin: 10px;
+}
+	
+	</style>	
+
+
+</head>
+
+<body>
+    <h1>Guess the color!</h1>
+    <h2 id="colorValue"></h2>
+    <div id="buttonWrapper">
+        <button class="colorButton"></button>
+        <button class="colorButton"></button>  
+        <button class="colorButton"></button>    
+        
+    </div>
+    <h2 id="answer"></h2>
+
+    <div id="reset"><button id="resetButton">Reset game</button></div>
+
+<script type="text/javascript">
+
+
+function makeColorValue() {
+  return Math.round(Math.random() * 255);
+}
+
+function setButtonColor(button, red, green, blue) {
+  button.setAttribute('style',
+    'background-color: rgb(' + red + ',' + green + ',' + blue + ');'
+  );
+}
+
+
+var buttons = document.getElementsByClassName('colorButton');
+
+var heading = document.getElementById('colorValue');
+
+var answerMessage = document.getElementById('answer');
+
+function startGame() {
+  answerMessage.innerHTML = "";
+  
+  var answerButton = Math.round(Math.random() * (buttons.length - 1));
+  
+  
+  for (var i = 0; i < buttons.length; i++) {
+
+    var red = makeColorValue();
+    var green = makeColorValue();
+    var blue = makeColorValue();
+
+    setButtonColor(buttons[i], red, green, blue);
+
+    if (i === answerButton) {
+      heading.innerHTML =`(${red}, ${green}, ${blue})`;
+    }
+
+    buttons[i].addEventListener('click', function(){
+        if (this === buttons[answerButton]) {
+            answerMessage.innerHTML = "Correct!";
+        } else {
+            answerMessage.innerHTML = "Wrong answer! Guess again!";
+        }
+    });
+
+  }
+
+}
+
+document.getElementById('resetButton').addEventListener('click', startGame);
+
+startGame();
+
+
+
+</script>
+
+</body>
