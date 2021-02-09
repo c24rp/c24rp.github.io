@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+		.squares{
+			width:40px;
+			height:40px;
+			margin:2px;
+			color:black;
+			background-color:lightblue;
+			position: relative;
+			display:inline-block;
+		}
+
+
+</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		function makeSquare(x){
+			var square = document.createElement('div');
+			document.body.appendChild(square);
+			square.classList.add('squares')
+			square.innerText = x;
+
+		}
+		
+		for (var i=0; i<1000; i=i+1){
+
+			if (i%3 == 0) {console.log('fizz')}
+			
+			else {console.log(i)}};
+
+
+	</script>
+
+</body>
+</html>
