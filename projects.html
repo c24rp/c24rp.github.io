@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		table{
+			width:100%;
+		}
+
+		td{
+			border: 1px solid black;
+
+		}
+		body {
+			background-color: rgb(8,8,8);
+			margin: 0px;
+
+		}
+
+		.box{
+			background-color: black;
+			transition: .5s;
+			color: white;
+			text-decoration: none;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 60px;
+
+
+		}
+
+		.box:hover{
+			background-color: white;
+			transition: .5s;
+			color: black;
+			font-size: 75px;
+
+
+		}
+
+
+		a{
+			font-family: 'Arial', cursive;
+			color: white;
+
+		}
+		
+		#p1 {
+			position: relative;
+			color: white;
+			text-decoration: none;
+			text-align: center;
+			vertical-align: text-middle;
+			font-size: 30px;
+
+		}
+
+#button:hover{
+background-color: #ff66b8;
+	transition: 1s;
+}
+	.menu{
+			width:300px;
+			height:300px;
+			background-size:cover;
+			background-image:url(light.png);
+			position:absolute;
+			animation-name:fall;
+			animation-duration:4s;
+		}
+
+​#a{
+	left: 300px;
+}
+#b{
+	left: 900px;
+}
+		@keyframes fall{
+​
+			0%{top:20%;}
+​
+			50%{top:50%;}
+​
+			100%{top:100%;}
+		}
+
+.dropbtn {
+	position: relative;
+	top: 30px;
+  background-color: rgb(100,100,100);
+  color: white;
+  padding: 0px;
+  font-size: 50px;
+  border: none;
+ width: 200px;
+  font-family: 'Arial', sans-serif; 
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  top: -50px;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+	font-family:'Roboto', sans-serif;
+  font-size: 20px;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+	font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  
+}
+
+.dropdown-content a:hover {background-color: rgb(255,255,255);
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(0,0,0);
+
+}
+
+
+	</style>
+
+</head>
+<body>
+
+<table>
+	<tr>
+		
+		<td>
+			<a href="journal.html">
+				<div class= 'box'>Journal</div>
+		</td>
+		<td>
+			<a href="index.html">
+			<div class= 'box'>Home</div>
+		</td>
+
+		<td>
+			<a href="AboutMe.html">
+			<div class= 'box'>About Me</div>
+		</td>
+
+	</tr>
+
+</table>
+
+<center>
+<div class="dropdown">
+  <button class="dropbtn">Projects!</button>
+  <div class="dropdown-content">
+    <a href="https://codepen.io/c24rp/pen/ExgWQMm">Person Card</a>
+    <a href="ColorCustomizer.html">Color Customizer</a>
+    <a href="ColorRandomizer.html">Color Randomizer</a>
+    <a href="Disco.html">Disco (broken)</a>
+    <a href="DivisbilityCalc.html">FizzBuzz Solution</a>
+    <a href="guess_the_color.html">Guess The Color Game</a>
+    <a href="https://docs.google.com/presentation/d/1fzhmi1pWvRHccDK7CA_LBRRsBa6opdk5Qd5Jymlu00U/edit?usp=sharing">Comp Sci Presentation - Colors</a>
+
+  </center> 
+
+</body>
+</html>

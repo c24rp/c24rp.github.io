@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+	<div> {
+			background-color: rgb(255,255,255);
+			margin: 0px;
+
+		}
+
+		<div/>
+
+</style>
+
+</head>
+<body>
+
+<p>This should change color</p>
+
+<label for="colorWell">Color:</label>
+<input type="color" value="#ff0000" id="colorWell">
+
+
+<script type="text/javascript">
+	
+	var colorWell;
+	var defaultColor = "#0000ff";
+
+	window.addEventListener("load", startup, false);
+
+	function startup() {
+	  colorWell = document.querySelector("#colorWell");
+	  colorWell.value = defaultColor;
+	  colorWell.addEventListener("input", updateFirst, false);
+	  colorWell.select();
+	}
+	
+	function updateFirst(event) {
+	  var p = document.querySelector("body");
+	 
+	    p.style.backgroundColor = event.target.value;
+	}
+
+	// function setBackroundColour(button, red, green, blue){
+ //    backround.setAttribute('style','background-color: rgb('+ red +','+ green +','+ blue +');');
+	// }
+
+</script>
+
+</body>
+</html>

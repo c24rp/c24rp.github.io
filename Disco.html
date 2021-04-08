@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style type="text/css">
+	
+	<div> {
+			background-color: rgb(255,255,255);
+			margin: 0px;
+
+		}
+
+		<div/>
+
+</style>
+
+</head>
+<body>
+
+<p>Disco!</p>
+
+<p>Select Modes</p>
+
+<button onclick="SlowFunction()">Slow</button>
+<button onclick="MediumFunction()">Medium</button>
+<button onclick="FastFunction()">Fast</button>
+
+
+<label for="colorWell">Picker:</label>
+<input type="color" value="#ff0000" id="colorWell">
+
+
+<script type="text/javascript">
+	
+	var colorWell;
+	var defaultColor = "#0000ff";
+
+	window.addEventListener("load", startup, false);
+
+	function startup() {
+	  colorWell = document.querySelector("#colorWell");
+	  colorWell.value = defaultColor;
+	  colorWell.addEventListener("input", updateFirst, false);
+	  colorWell.select();
+	}
+	
+	function updateFirst(event) {
+	  var p = document.querySelector("body");
+	    p.style.backgroundColor = event.target.value;
+	}
+
+	var boxes = [];
+	
+	function SlowFunction(){
+
+	function colour_random() {
+	  var num = Math.floor(Math.random() * Math.pow(2, 24));
+	  return '#' + ('00000' + num.toString(16)).substr(-6);
+	}
+
+	function color_random() {
+	  var colors = ["red", "lightBlue", "white", "lightGrey", "neonGreen"];
+	  var number = Math.floor(Math.random()*5);
+	  return colors[number];
+	}
+
+	function colorChange() {
+	  for (var j = 0; j<=99; j++){
+	    boxes[j].style.backgroundColor = (colour_random());
+	}
+	
+	window.setInterval(colorChange, 50);
+
+	for (var i = 0; i<=99; i++){
+ 	var x = document.createElement("DIV");
+	boxes[i] = x;
+	document.body.appendChild(x);
+}
+
+
+	function MediumFunction(){
+    console.log("medium");
+	}
+
+	function FastFunction(){
+    console.log("fast");
+	}
+</script>
+
+</body>
+</html>
